@@ -1,0 +1,12 @@
+
+In scripts/run_tests.sh line 56:
+if false | true; then
+           ^--^ SC2216 (warning): Piping to 'true', a command that doesn't read stdin. Wrong command or missing xargs?
+
+
+In scripts/run_tests.sh line 60:
+if false | true; then
+           ^--^ SC2216 (warning): Piping to 'true', a command that doesn't read stdin. Wrong command or missing xargs?
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2216 -- Piping to 'true', a command that ...
