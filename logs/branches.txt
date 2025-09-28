@@ -1,4 +1,0 @@
-  feature/nueva-funcionalidad 78ca1e0 Actualizar main.py
-* master                      78ca1e0 Actualizar main.py
-  feature/nueva-funcionalidad 87b081b Agregar función saludar
-* master                      87b081b Agregar función saludar

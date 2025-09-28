@@ -1,8 +1,0 @@
-Updating 78ca1e0..87b081b
-Fast-forward
- logs/branches.txt    | 2 ++
- logs/log-oneline.txt | 2 ++
- main.py              | 1 +
- 3 files changed, 5 insertions(+)
- create mode 100644 logs/branches.txt
- create mode 100644 logs/log-oneline.txt

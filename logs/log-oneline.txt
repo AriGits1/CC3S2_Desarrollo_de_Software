@@ -1,2 +1,0 @@
-78ca1e0 Actualizar main.py
-253a8b9 Commit inicial
