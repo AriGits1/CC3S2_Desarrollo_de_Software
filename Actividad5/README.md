@@ -1,10 +1,10 @@
 # Actividad 5: Construyendo un pipeline DevOps con Make y Bash
 ## Capturas de la ejecucion de ejercicios
 
-![Terminal](imagenes/Ejercicios_1_2_y_3)
-![Terminal](imagenes/Ejercicio4_completo)
-![Terminal](imagenes/Ejercicio6)
-![Terminal](imagenes/Ejercicios_7_y_8)
+![Terminal](imagenes/Ejercicios_1_2_y_3.png)
+![Terminal](imagenes/Ejercicio4_completo.png)
+![Terminal](imagenes/Ejercicio6.png)
+![Terminal](imagenes/Ejercicios_7_y_8.png)
 
 ## Parte 1 - Construir
 
