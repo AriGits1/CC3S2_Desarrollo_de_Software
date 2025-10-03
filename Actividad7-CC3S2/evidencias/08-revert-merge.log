@@ -1,0 +1,6 @@
+* 5df1f92 (HEAD -> master) Revert "Merge branch 'feature-revert'"
+*   87100fb Merge branch 'feature-revert'
+|\  
+| * 5c0b0a3 (feature-revert) Agregar contenido para revertir
+|/  
+* 0a4b6d1 Commit inicial

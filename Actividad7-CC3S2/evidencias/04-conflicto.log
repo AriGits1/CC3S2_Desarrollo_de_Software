@@ -1,0 +1,8 @@
+* 562d23f (HEAD -> master) Resolver conflicto entre main y feature-update
+*   4797d63 Merge branch 'feature-update'
+|\  
+| * 183e800 (feature-update) Modificar título en main
+| * 603d004 Modificar título en feature
+* | 1cedda0 Modificar título en main
+|/  
+* 251cd6f Commit inicial con index.html
