@@ -4,6 +4,8 @@
 **Curso:** CC3S2 - Desarrollo de Software  
 **Fecha:** 10 Octubre 2025
 
+# Las capturas de las ejecuciones se encuentran en la carpeta evidencias
+
 ## 📋 Descripción General
 
 Este proyecto resuelve 7 actividades de testing en Python, demostrando dominio completo de las herramientas y técnicas modernas de testing profesional.
@@ -26,10 +28,10 @@ Este proyecto resuelve 7 actividades de testing en Python, demostrando dominio c
 
 # Activar venv
 - source .venv/bin/activate        # /WSL
-# .venv\Scripts\activate         # Windows CMD
-# .venv\Scripts\Activate.ps1     # Windows PowerShell
+- .venv\Scripts\activate         # Windows CMD
+- .venv\Scripts\Activate.ps1     # Windows PowerShell
 
-###3. Instalar dependencias
+### 3. Instalar dependencias
 - pip install -r requirements.txt
 ##Ejecutar todos los test
 - make test_all
