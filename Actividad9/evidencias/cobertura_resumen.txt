@@ -1,0 +1,18 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.6.0
+rootdir: /mnt/c/Users/LENOVO/Desktop/UNI/25-II/Software/Actividad 9/soluciones/coverage_pruebas
+plugins: Faker-37.11.0, cov-5.0.0
+collected 10 items
+
+tests/test_account.py ..........                                         [100%]
+
+---------- coverage: platform linux, python 3.10.12-final-0 ----------
+Name                 Stmts   Miss  Cover   Missing
+--------------------------------------------------
+models/__init__.py       6      0   100%
+models/account.py       47      0   100%
+--------------------------------------------------
+TOTAL                   53      0   100%
+
+
+============================== 10 passed in 4.13s ==============================
