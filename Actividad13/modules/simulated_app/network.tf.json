@@ -1,0 +1,22 @@
+{
+  "variable": [
+    {
+      "name": [
+        {
+          "type": "string",
+          "default": "my-server",
+          "description": "Identificador único del servidor en el cluster"
+        }
+      ]
+    },
+    {
+      "network": [
+        {
+          "type": "string",
+          "default": "lab-net",
+          "description": "Nombre de la red local"
+        }
+      ]
+    }
+  ]
+}
