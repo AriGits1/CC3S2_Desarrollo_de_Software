@@ -1,0 +1,244 @@
+{
+    "resource": [
+        {
+            "null_resource": [
+                {
+                    "placeholder_0": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "d97234a0-c65e-43f8-9781-753c1674926d",
+                                "timestamp": "2025-11-17T13:37:04.589101",
+                                "index": 0
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "placeholder_1": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "d97234a0-c65e-43f8-9781-753c1674926d",
+                                "timestamp": "2025-11-17T13:37:04.589101",
+                                "index": 1
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "placeholder_2": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "d97234a0-c65e-43f8-9781-753c1674926d",
+                                "timestamp": "2025-11-17T13:37:04.589101",
+                                "index": 2
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "placeholder_3": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "d97234a0-c65e-43f8-9781-753c1674926d",
+                                "timestamp": "2025-11-17T13:37:04.589101",
+                                "index": 3
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "placeholder_4": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "d97234a0-c65e-43f8-9781-753c1674926d",
+                                "timestamp": "2025-11-17T13:37:04.589101",
+                                "index": 4
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "placeholder_5": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "d97234a0-c65e-43f8-9781-753c1674926d",
+                                "timestamp": "2025-11-17T13:37:04.589101",
+                                "index": 5
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "placeholder_6": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "d97234a0-c65e-43f8-9781-753c1674926d",
+                                "timestamp": "2025-11-17T13:37:04.589101",
+                                "index": 6
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "placeholder_7": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "d97234a0-c65e-43f8-9781-753c1674926d",
+                                "timestamp": "2025-11-17T13:37:04.589101",
+                                "index": 7
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "placeholder_8": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "d97234a0-c65e-43f8-9781-753c1674926d",
+                                "timestamp": "2025-11-17T13:37:04.589101",
+                                "index": 8
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "placeholder_9": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "d97234a0-c65e-43f8-9781-753c1674926d",
+                                "timestamp": "2025-11-17T13:37:04.589101",
+                                "index": 9
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "placeholder_10": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "d97234a0-c65e-43f8-9781-753c1674926d",
+                                "timestamp": "2025-11-17T13:37:04.589101",
+                                "index": 10
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "placeholder_11": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "d97234a0-c65e-43f8-9781-753c1674926d",
+                                "timestamp": "2025-11-17T13:37:04.589101",
+                                "index": 11
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "placeholder_12": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "d97234a0-c65e-43f8-9781-753c1674926d",
+                                "timestamp": "2025-11-17T13:37:04.589101",
+                                "index": 12
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "placeholder_13": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "d97234a0-c65e-43f8-9781-753c1674926d",
+                                "timestamp": "2025-11-17T13:37:04.589101",
+                                "index": 13
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "placeholder_14": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "d97234a0-c65e-43f8-9781-753c1674926d",
+                                "timestamp": "2025-11-17T13:37:04.589101",
+                                "index": 14
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "finalizador": [
+                        {
+                            "triggers": {
+                                "nota": "Recurso compuesto generado din\u00e1micamente en tiempo de ejecuci\u00f3n",
+                                "factory_uuid": "3d827003-9779-49bd-884a-2f17012012ba",
+                                "timestamp": "2025-11-17T13:37:04.589620"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

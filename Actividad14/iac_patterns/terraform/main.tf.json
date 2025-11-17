@@ -1,0 +1,43 @@
+{
+    "terraform": {
+        "required_providers": {
+            "null": {
+                "source": "hashicorp/null",
+                "version": "~> 3.0"
+            },
+            "local": {
+                "source": "hashicorp/local",
+                "version": "~> 2.4"
+            }
+        }
+    },
+    "resource": [
+        {
+            "null_resource": [
+                {
+                    "app_0": [
+                        {
+                            "triggers": {
+                                "factory_uuid": "a61f1adf-9b28-449e-9ef0-fed89e80a3ee",
+                                "timestamp": "2025-11-17T14:13:33.542298+00:00",
+                                "welcome": "\u00a1Hola desde Prototype!"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "local_file": [
+                {
+                    "welcome_txt": [
+                        {
+                            "content": "Bienvenido al recurso mutado por Prototype.",
+                            "filename": "${path.module}/bienvenida.txt"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
