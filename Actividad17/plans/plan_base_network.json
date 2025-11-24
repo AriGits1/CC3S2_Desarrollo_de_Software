@@ -1,0 +1,164 @@
+{
+  "format_version": "1.0",
+  "terraform_version": "1.5.0",
+  "variables": {
+    "vpc_cidr": {
+      "value": "10.0.0.0/16"
+    },
+    "subnet_count": {
+      "value": 2
+    },
+    "environment": {
+      "value": "dev"
+    }
+  },
+  "planned_values": {
+    "outputs": {
+      "vpc_id": {
+        "value": "vpc-c0c1d1e7f7a6b9c8d"
+      },
+      "subnet_ids": {
+        "value": [
+          "subnet-abc123def456",
+          "subnet-ghi789jkl012"
+        ]
+      },
+      "vpc_cidr_block": {
+        "value": "10.0.0.0/16"
+      },
+      "route_table_id": {
+        "value": "rtb-xyz789"
+      },
+      "subnet_cidrs": {
+        "value": [
+          "10.0.0.0/24",
+          "10.0.1.0/24"
+        ]
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "null_resource.vpc",
+          "mode": "managed",
+          "type": "null_resource",
+          "name": "vpc",
+          "provider_name": "registry.terraform.io/hashicorp/null",
+          "schema_version": 0,
+          "values": {
+            "triggers": {
+              "vpc_cidr": "10.0.0.0/16",
+              "environment": "dev"
+            }
+          }
+        },
+        {
+          "address": "null_resource.subnets[0]",
+          "mode": "managed",
+          "type": "null_resource",
+          "name": "subnets",
+          "index": 0,
+          "provider_name": "registry.terraform.io/hashicorp/null",
+          "schema_version": 0,
+          "values": {
+            "triggers": {
+              "subnet_cidr": "10.0.0.0/24",
+              "vpc_id": "vpc-c0c1d1e7f7a6b9c8d"
+            }
+          }
+        },
+        {
+          "address": "null_resource.subnets[1]",
+          "mode": "managed",
+          "type": "null_resource",
+          "name": "subnets",
+          "index": 1,
+          "provider_name": "registry.terraform.io/hashicorp/null",
+          "schema_version": 0,
+          "values": {
+            "triggers": {
+              "subnet_cidr": "10.0.1.0/24",
+              "vpc_id": "vpc-c0c1d1e7f7a6b9c8d"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "null_resource.vpc",
+      "mode": "managed",
+      "type": "null_resource",
+      "name": "vpc",
+      "provider_name": "registry.terraform.io/hashicorp/null",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "triggers": {
+            "vpc_cidr": "10.0.0.0/16",
+            "environment": "dev"
+          }
+        }
+      }
+    },
+    {
+      "address": "null_resource.subnets[0]",
+      "mode": "managed",
+      "type": "null_resource",
+      "name": "subnets",
+      "index": 0,
+      "provider_name": "registry.terraform.io/hashicorp/null",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "triggers": {
+            "subnet_cidr": "10.0.0.0/24",
+            "vpc_id": "vpc-c0c1d1e7f7a6b9c8d"
+          }
+        }
+      }
+    },
+    {
+      "address": "null_resource.subnets[1]",
+      "mode": "managed",
+      "type": "null_resource",
+      "name": "subnets",
+      "index": 1,
+      "provider_name": "registry.terraform.io/hashicorp/null",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "triggers": {
+            "subnet_cidr": "10.0.1.0/24",
+            "vpc_id": "vpc-c0c1d1e7f7a6b9c8d"
+          }
+        }
+      }
+    }
+  ],
+  "configuration": {
+    "root_module": {
+      "outputs": {
+        "vpc_id": {
+          "expression": {
+            "references": ["local.vpc_id"]
+          }
+        },
+        "subnet_ids": {
+          "expression": {
+            "references": ["local.subnets"]
+          }
+        },
+        "vpc_cidr_block": {
+          "expression": {
+            "references": ["var.vpc_cidr"]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+=========================================
+  SMOKE TESTS (Target: <30s)
+=========================================
+Start: Fri Nov 21 10:30:15 2025
+
+[Testing network]
+  ✓ Format OK
+  ✓ Init OK
+  ✓ Validation OK
+  ✓ Plan OK
+  ✓ Contract OK (5 outputs)
+✓ network: All checks passed
+
+[Testing compute]
+  ✓ Format OK
+  ✓ Init OK
+  ✓ Validation OK
+  ✓ Plan OK
+  ✓ Contract OK (4 outputs)
+✓ compute: All checks passed
+
+[Testing storage]
+  ✓ Format OK
+  ✓ Init OK
+  ✓ Validation OK
+  ✓ Plan OK
+  ✓ Contract OK (5 outputs)
+✓ storage: All checks passed
+
+[Testing firewall]
+  ✓ Format OK
+  ✓ Init OK
+  ✓ Validation OK
+  ✓ Plan OK
+  ✓ Contract OK (3 outputs)
+✓ firewall: All checks passed
+
+[Testing dns]
+  ✓ Format OK
+  ✓ Init OK
+  ✓ Validation OK
+  ✓ Plan OK
+  ✓ Contract OK (4 outputs)
+✓ dns: All checks passed
+
+=========================================
+  SMOKE TESTS SUMMARY
+=========================================
+Modules tested: 5
+Passed: 5
+Failed: 0
+Duration: 18s (Target: <30s)
+
+✓ All smoke tests passed successfully
