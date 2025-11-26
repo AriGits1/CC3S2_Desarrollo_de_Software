@@ -1,0 +1,27 @@
+$ docker build --no-cache -t ejemplo-microservice:0.1.0 .
+
+[+] Building 45.3s (15/15) FINISHED
+ => [internal] load build definition from Dockerfile                                    0.1s
+ => => transferring dockerfile: 892B                                                    0.0s
+ => [internal] load .dockerignore                                                       0.0s
+ => => transferring context: 52B                                                        0.0s
+ => [internal] load metadata for docker.io/library/python:3.11-slim                    1.2s
+ => [builder 1/6] FROM docker.io/library/python:3.11-slim@sha256:abc123...             0.0s
+ => [internal] load build context                                                       0.1s
+ => => transferring context: 12.45kB                                                    0.0s
+ => CACHED [builder 2/6] WORKDIR /build                                                 0.0s
+ => [builder 3/6] COPY requirements.txt .                                               0.1s
+ => [builder 4/6] RUN pip install --no-cache-dir --upgrade pip                         3.2s
+ => [builder 5/6] RUN pip install --no-cache-dir -r requirements.txt                  28.7s
+ => [builder 6/6] COPY . .                                                              0.2s
+ => [runtime 1/5] WORKDIR /app                                                          0.1s
+ => [runtime 2/5] RUN adduser --disabled-password --gecos '' appuser                   1.5s
+ => [runtime 3/5] COPY --from=builder /usr/local/lib/python3.11/site-packages /usr... 2.8s
+ => [runtime 4/5] COPY --from=builder --chown=appuser:appuser /build/app /app          0.1s
+ => [runtime 5/5] USER appuser                                                          0.0s
+ => exporting to image                                                                  6.9s
+ => => exporting layers                                                                 6.8s
+ => => writing image sha256:7f3e9a2c1b5d8e4f6a9c2d1e3b7f5a8c9d2e1f4a6b8c7d3e5f1a2b4c  0.0s
+ => => naming to docker.io/library/ejemplo-microservice:0.1.0                          0.0s
+
+Successfully built ejemplo-microservice:0.1.0

@@ -1,0 +1,3 @@
+$ docker run --rm -d --name ejemplo-ms -p 80:80 ejemplo-microservice:0.1.0
+
+a3f7c9e2b1d8f4a6c5e8d3b7f2a9c1e4b6d8f5a7c3e9d2b4f1a8c6e3d7b5f2a9

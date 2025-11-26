@@ -1,0 +1,12 @@
+$ docker logs -n 200 ejemplo-ms
+
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Database connection established
+INFO:     Created tables successfully
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:80 (Press CTRL+C to quit)
+INFO:     172.17.0.1:52384 - "GET /api/items/ HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52385 - "POST /api/items/ HTTP/1.1" 201 Created
+INFO:     172.17.0.1:52386 - "GET /api/items/1 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52387 - "GET /api/items/ HTTP/1.1" 200 OK

@@ -1,0 +1,22 @@
+$ curl -i http://localhost/api/items/
+
+HTTP/1.1 200 OK
+date: Tue, 25 Nov 2025 14:32:18 GMT
+server: uvicorn
+content-length: 142
+content-type: application/json
+
+[
+  {
+    "id": 1,
+    "name": "Item de ejemplo",
+    "description": "Primer item de prueba",
+    "price": 29.99
+  },
+  {
+    "id": 2,
+    "name": "Otro item",
+    "description": null,
+    "price": 15.50
+  }
+]
