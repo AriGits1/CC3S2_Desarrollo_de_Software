@@ -1,0 +1,36 @@
+# Comandos utilizados en la actividad
+
+# Preparar entorno
+cd Observabilidad-mcp
+python -m venv bdd
+source bdd/bin/activate
+make deps
+
+# Levantar stack
+make up
+docker ps
+
+# Generar tráfico (alternativa cuando make demo-traffic falla)
+for i in {1..20}; do
+  curl -s http://localhost:8000/healthz > /dev/null
+  curl -s http://localhost:8000/api/v1/items > /dev/null
+  curl -s http://localhost:8000/api/v1/error > /dev/null
+  sleep 0.3
+done
+
+# Verificar servicios
+curl http://localhost:8000/healthz
+curl http://localhost:8080/api/summary
+curl http://localhost:3100/ready
+
+# Ver logs de contenedores
+docker logs demo-app --tail 20
+docker logs promtail --tail 20
+docker logs loki --tail 20
+
+# Reiniciar si hay problemas
+docker restart loki
+docker restart promtail
+
+# Apagar todo
+make down

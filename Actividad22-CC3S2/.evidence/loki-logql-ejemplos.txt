@@ -1,0 +1,25 @@
+# Queries LogQL probadas
+
+# Todos los logs de la app
+{job="demo-app"}
+
+# Solo errores
+{job="demo-app"} |= "ERROR"
+
+# Solo warnings
+{job="demo-app"} |= "WARNING"
+
+# Solo info
+{job="demo-app"} |= "INFO"
+
+# Errores sin health checks
+{job="demo-app"} |= "ERROR" != "healthz"
+
+# Buscar con regex
+{job="demo-app"} |~ "error|fail|exception"
+
+# Contar errores en 5 minutos
+count_over_time({job="demo-app"} |= "ERROR" [5m])
+
+# Tasa de errores por segundo
+rate({job="demo-app"} |= "ERROR" [1m])

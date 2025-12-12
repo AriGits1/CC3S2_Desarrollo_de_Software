@@ -1,0 +1,18 @@
+# Queries PromQL probadas
+
+# Ver si los targets están arriba
+up
+up{job="otel-collector"}
+
+# Métricas del collector
+otelcol_receiver_accepted_spans
+otelcol_exporter_sent_spans
+
+# Buscar métricas HTTP (escribir http en el autocompletado)
+{__name__=~"http.*"}
+
+# Ver todas las métricas del job
+{job="otel-collector"}
+
+# Nota: Las métricas http_server_requests_total no existen en este stack
+# porque la app solo exporta trazas, no métricas HTTP

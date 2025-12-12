@@ -1,0 +1,22 @@
+# Queries TraceQL probadas
+
+# Todas las trazas del servicio
+{ service.name = "demo-app" }
+
+# Por endpoint
+{ service.name = "demo-app" && http.target = "/api/v1/items" }
+{ service.name = "demo-app" && http.target = "/api/v1/error" }
+
+# Trazas con error
+{ service.name = "demo-app" && status = error }
+
+# Trazas lentas
+{ service.name = "demo-app" && duration > 500ms }
+
+# Por nombre de span
+{ name = "list_items" }
+{ name = "cpu_bound_work" }
+{ name = "error_endpoint" }
+
+# Buscar traza específica por ID
+{ trace:id = "abc123..." }
