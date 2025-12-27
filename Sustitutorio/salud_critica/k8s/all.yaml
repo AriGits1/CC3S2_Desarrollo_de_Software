@@ -1,0 +1,261 @@
+---
+# Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: salud-critica
+  labels:
+    security: critical
+
+---
+# Default Deny NetworkPolicy
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny
+  namespace: salud-critica
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
+
+---
+# Acquisition Service
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: acquisition
+  namespace: salud-critica
+  annotations:
+    deployment.approved-by: "comite-clinico"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: acquisition
+  template:
+    metadata:
+      labels:
+        app: acquisition
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1001
+      containers:
+      - name: acquisition
+        image: acquisition:v1
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8001
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: false
+          capabilities:
+            drop: [ALL]
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8001
+          initialDelaySeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8001
+          initialDelaySeconds: 3
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: acquisition
+  namespace: salud-critica
+spec:
+  selector:
+    app: acquisition
+  ports:
+  - port: 8001
+    targetPort: 8001
+
+---
+# NetworkPolicy para Acquisition
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: acquisition-policy
+  namespace: salud-critica
+spec:
+  podSelector:
+    matchLabels:
+      app: acquisition
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: inference
+
+---
+# Inference Service
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inference
+  namespace: salud-critica
+  annotations:
+    deployment.approved-by: "comite-clinico"
+    model.version: "v2.3.1"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: inference
+  template:
+    metadata:
+      labels:
+        app: inference
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1001
+      containers:
+      - name: inference
+        image: inference:v1
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8002
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: false
+          capabilities:
+            drop: [ALL]
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8002
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8002
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "1000m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: inference
+  namespace: salud-critica
+spec:
+  selector:
+    app: inference
+  ports:
+  - port: 8002
+    targetPort: 8002
+
+---
+# NetworkPolicy para Inference
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: inference-policy
+  namespace: salud-critica
+spec:
+  podSelector:
+    matchLabels:
+      app: inference
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: acquisition
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: audit
+
+---
+# Audit Service
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: audit
+  namespace: salud-critica
+  annotations:
+    deployment.approved-by: "comite-clinico"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: audit
+  template:
+    metadata:
+      labels:
+        app: audit
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1001
+      containers:
+      - name: audit
+        image: audit:v1
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8003
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: false
+          capabilities:
+            drop: [ALL]
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8003
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8003
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: audit
+  namespace: salud-critica
+spec:
+  selector:
+    app: audit
+  ports:
+  - port: 8003
+    targetPort: 8003
+
+---
+# NetworkPolicy para Audit
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: audit-policy
+  namespace: salud-critica
+spec:
+  podSelector:
+    matchLabels:
+      app: audit
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: inference

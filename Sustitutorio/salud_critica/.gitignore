@@ -1,0 +1,4 @@
+*.pyc
+__pycache__/
+sbom-*.json
+deployment-log.txt
